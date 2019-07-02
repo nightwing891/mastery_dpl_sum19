@@ -1,7 +1,6 @@
 import React from 'react';
 import Reviews from './Reviews';
 // import { Navbar, } from 'semantic-ui-react';
-// import { Footer, } from 'semantic-ui-react';
 // import { Video, } from ;
 // import { CoursesPrev} from 'some/folder';
 
@@ -26,7 +25,11 @@ const Home = () => (
 {/* <CoursesPrev /> */}
 
 <h2>Reviews</h2>
+
+{/* <Reviews /> */}
+
 <Reviews />
+
 
 
 
