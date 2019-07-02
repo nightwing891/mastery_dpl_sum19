@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Footer, Dimmer, Loader } from 'semantic-ui-react';
+import Reviews from './Reviews';
+// import { Navbar, } from 'semantic-ui-react';
 // import { Video, } from ;
 // import { CoursesPrev} from 'some/folder';
 // import { Reviews } from;
@@ -9,6 +11,13 @@ import CourseIndex from './Course/CouseIndex';
 class Home extends Component {
 
   state = { courses: [], loaded: false }
+{/* <div className="home-videos">
+  <div className="video">
+    <p>Video goes here + link </p>
+    <h4>Description of the video</h4>
+  </div>
+</div> */}
+
 
   setLoaded = () => {
     this.setState({ loaded: true })
@@ -68,6 +77,18 @@ class Home extends Component {
     )
   }
 }
+
+<h2>Reviews</h2>
+
+{/* <Reviews /> */}
+
+<Reviews />
+
+
+
+
+ {/* <Footer /> */}
+
 
 /* // 
 //   <Header as="h3" textAlign="center">Devise Auth App</Header>
