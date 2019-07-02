@@ -1,6 +1,5 @@
 import React from 'react';
 // import { Navbar, } from 'semantic-ui-react';
-// import { Footer, } from 'semantic-ui-react';
 // import { Video, } from ;
 // import { CoursesPrev} from 'some/folder';
 // import { Reviews } from;
@@ -25,7 +24,6 @@ const Home = () => (
 
 <h2>Reviews</h2>
 {/* <Reviews /> */}
-
  {/* <Footer /> */}
 
 </>
