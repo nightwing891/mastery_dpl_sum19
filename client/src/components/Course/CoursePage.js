@@ -4,20 +4,21 @@ import CourseDescription from './CourseDescription';
 import CourseOverview from './CourseOverview';
 import CourseLessonPlan from './CourseLessonPlan';
 import { Header, Button, Divider, Grid, Icon, Search, Segment, Container } from "semantic-ui-react";
+import Home from '../Home';
 
 class CoursePage extends React.Component {
-  state = { lessons: [], course: [], }
 
   render() {
+    const { title, subtitle, description, workbook, id } = this.props
     return (
       <>
         <CourseHeader
-          course_id={this.state.id}
-          title={this.state.title}
-          subtitle={this.state.subtitle}
+          course_id={id}
+          title={title}
+          subtitle={subtitle}
         />
         <CourseDescription
-          description={this.state.description}
+          description={description}
         />
         <CourseOverview/>
         <CourseLessonPlan/>
