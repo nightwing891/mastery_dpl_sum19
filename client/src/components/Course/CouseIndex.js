@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import Home from '../Home';
-import CourseHeader from './CourseHeader';
+import CourseList from './CourseList';
 
 const CourseIndex = ({courses}) => (
 
   <div>
   <h1>All Courses</h1>
-    {
-      courses.map( course => <CourseHeader key={course.id} {...course} /> )
-    }
+    <ul>
+      {
+        courses.map( course => <CourseList key={course.id} {...course} /> )
+      }
+    </ul>
 </div>
 )
 

@@ -8,8 +8,6 @@ const CourseHeader = ({title, subtitle}) => (
 </Header>
 <p>{ subtitle }</p>
 <br/>
-<br/>
-<br/>
 </Container>
 )
 

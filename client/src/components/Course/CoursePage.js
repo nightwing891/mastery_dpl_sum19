@@ -9,7 +9,7 @@ import Home from '../Home';
 class CoursePage extends React.Component {
 
   render() {
-    const { title, subtitle, description, workbook, id } = this.props
+    const { title, subtitle, description, workbook, id } = this.props.location.state
     return (
       <>
         <CourseHeader
