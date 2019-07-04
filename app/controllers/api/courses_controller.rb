@@ -1,5 +1,5 @@
 class Api::CoursesController < ApplicationController
-  before_action :authenticate_user, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   
   def index
     render json: Course.all
@@ -23,6 +23,12 @@ class Api::CoursesController < ApplicationController
   def destroy
     Course.find(params[:id]).destroy
     render json: { message: 'course deleted' }
+  end
+
+  def show
+    # shows a indvidual course lesson
+    @course = Course.find(params[:id])
+    render json: @course.lessons
   end
 
   private

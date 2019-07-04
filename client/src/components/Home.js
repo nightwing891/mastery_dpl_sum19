@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    axios.get("api/courses")
+    axios.get("/api/courses")
     .then( res => {
       this.setState({ courses: res.data })
       this.setLoaded()

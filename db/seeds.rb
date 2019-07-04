@@ -20,7 +20,7 @@ courses = [1,2,3,4,5,6,7,8,9,10]
     description: Faker::Quote.famous_last_words
   )
  
-100.times do 
+8.times do 
   lesson = Lesson.create(
       instructor: Faker::GreekPhilosophers.name,
       title: Faker::Hipster.word,
@@ -30,7 +30,6 @@ courses = [1,2,3,4,5,6,7,8,9,10]
       complete: false,
       course_id: courses.sample
   )
-  
 
   end
 end
