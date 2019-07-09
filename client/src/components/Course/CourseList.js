@@ -9,7 +9,7 @@ const CourseList = ({title, subtitle, description, workbook, id}) => (
           <Card>
             <Image src='https://cdn.pixabay.com/photo/2013/07/13/10/33/desktop-157479_1280.png' wrapped ui={false} />
             <Card.Content>
-              <Card.Header><Link to={{ pathname: `./course/${id}`, state: { id, title, description, workbook, subtitle } }} >{ title }</Link></Card.Header>
+              <Card.Header><Link to={{ pathname: `./course/${id}`, state: { id, title, description, workbook, subtitle, } }} >{ title }</Link></Card.Header>
             </Card.Content>
           </Card>
       </Grid.Column>

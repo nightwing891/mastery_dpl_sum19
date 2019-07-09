@@ -4,6 +4,8 @@ import { Grid, Menu, MenuItem } from 'semantic-ui-react';
 function Footer( ) {
   return (
     <footer>
+      <br/>
+      <br/>
       <Grid>
         <Menu justified>
           <MenuItem
