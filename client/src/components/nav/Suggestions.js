@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SearchSuggestions = ({results, query}) => {
+const SearchSuggestions = ({results, query, toggle}) => {
 
   if(results.length > 0) {
     const options = results.map(r => {
       const regex = new RegExp(query, 'gi')
       if (r.title.match(regex)) 
         return(<li key={r.id}>
-          <Link to={`/courses/${r.id}`}>{r.title}</Link>
+          <Link onClick={toggle} to={`/courses/${r.id}`}>{r.title}</Link>
         </li>)
     })
     return <ul>{options}</ul>
