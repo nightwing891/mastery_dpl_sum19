@@ -5,7 +5,7 @@ import CourseOverview from './CourseOverview';
 import CourseLessonPlan from './CourseLessonPlan';
 import { Header, Button, Divider, Grid, Icon, Search, Segment, Container } from "semantic-ui-react";
 import Home from '../Home';
-import LessonIndex from './LessonIndex';
+import LessonIndex from '../Lesson/LessonIndex';
 import axios from 'axios';
 
 class CoursePage extends React.Component {
@@ -24,7 +24,7 @@ class CoursePage extends React.Component {
   }
 
   render() {
-    const { title, subtitle, description, workbook, id } = this.props.location.state
+    const { title, subtitle, description, workbook, id, } = this.props.location.state
     const { lessons } = this.state
     return (
       <>
@@ -37,6 +37,7 @@ class CoursePage extends React.Component {
           description={description}
         />
         <CourseOverview/>
+        <LessonIndex lessons={lessons}/>
         <CourseLessonPlan/>
       </>
 

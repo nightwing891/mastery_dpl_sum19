@@ -16,6 +16,7 @@ import AllLessons from './components/admin/AdminLesson/AllLessons';
 
 
 import CoursePage from './components/Course/CoursePage';
+import LessonPage from './components/Lesson/LessonPage';
 
 
 import { Switch, Route, } from 'react-router-dom';
@@ -30,6 +31,7 @@ const App = () => (
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/course/:id" component={CoursePage} />
+            <Route exact path="/lesson/:id" component={LessonPage} />
            <Route exact path="/admin-landing" component={AdminPage} />
            <Route exact path="/admin-create-course" component={CreateCourse} />
            <Route exact path="/admin-create-lesson" component={CreateLesson} />
