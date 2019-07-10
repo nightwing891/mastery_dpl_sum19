@@ -11,4 +11,6 @@ const CourseIndex = ({courses}) => (
 </div>
 )
 
+
+
 export default CourseIndex;
