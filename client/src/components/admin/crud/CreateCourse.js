@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from '../../Navbar';
 import CourseForm from './CourseForm';
 import axios from 'axios';
 

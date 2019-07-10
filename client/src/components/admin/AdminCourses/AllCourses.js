@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from '../../Navbar';
 import axios from 'axios';
 import Course from './Course';
 
-class EditCourse extends Component {
+class AllCourses extends Component {
   state = { courses: [] }
 
   componentDidMount() {
@@ -45,9 +44,7 @@ class EditCourse extends Component {
   render() {
     const { courses } = this.state
     return(
-      <>
-        <Navbar />
-        <h1>Select a Course to Edit</h1>
+      <>  
         {this.renderCourses()}
       </>
     )
@@ -55,4 +52,4 @@ class EditCourse extends Component {
 }
 
 
-export default EditCourse;
+export default AllCourses;

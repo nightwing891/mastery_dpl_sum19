@@ -9,9 +9,10 @@ import AdminPage from './components/admin/AdminPage';
 import CreateCourse from './components/admin/crud/CreateCourse';
 import CreateLesson from './components/admin/crud/CreateLesson';
 import CreateUser from './components/admin/crud/CreateUser';
-import EditCourse from './components/admin/crud/EditCourse';
+import EditCourse from './components/admin/AdminCourses/AllCourses';
 import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
+import AllLessons from './components/admin/AdminLesson/AllLessons';
 
 
 import CoursePage from './components/Course/CoursePage';
@@ -34,7 +35,7 @@ const App = () => (
            <Route exact path="/admin-create-lesson" component={CreateLesson} />
            <Route exact path="/admin-create-user" component={CreateUser} />
            <Route exact path="/admin-edit-course" component={EditCourse} />
-           <Route exact path="/admin-edit-lesson" component={EditLesson} />
+           <Route exact path="/admin-edit-lesson" component={AllLessons} />
            <Route exact path="/admin-edit-user" component={EditUser} />
            <Route component={NoMatch} />
           </Switch>
