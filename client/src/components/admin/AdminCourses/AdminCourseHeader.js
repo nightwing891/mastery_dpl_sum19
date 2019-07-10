@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Header, Button, Divider, Grid, Icon, Search, Segment, Container } from "semantic-ui-react";
 
-const CourseDescription = ({description}) => (
+const CourseHeader = ({title, subtitle}) => (
 <Container>
-<Header as="h2">
-{ description }
+<Header as="h1">
+  { title }
 </Header>
+<p>{ subtitle }</p>
+<br/>
 </Container>
 )
 
-export default CourseDescription;
+export default CourseHeader;

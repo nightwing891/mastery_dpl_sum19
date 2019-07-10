@@ -1,5 +1,5 @@
 class Api::LessonsController < ApplicationController
-  before_action: set_course
+  before_action :set_course
 
   def index
     render json: @course.lessons
