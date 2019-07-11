@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Login from './components/auth/Login';
 import FetchUser from './components/auth/FetchUser';
 import AdminPage from './components/admin/AdminPage';
+import AdminCrud from './components/admin/AdminCrud';
 import CreateCourse from './components/admin/crud/CreateCourse';
 import CreateLesson from './components/admin/crud/CreateLesson';
 import CreateUser from './components/admin/crud/CreateUser';
@@ -34,7 +35,8 @@ const App = () => (
             <Route exact path="/login" component={Login} />
             <ProtectedRoute exact path="/course/:id" component={CoursePage} />
             <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
-            <AdminRoute exact path="/admin-landing" component={AdminPage} />
+            <AdminRoute exact path="/admin-crud" component={AdminCrud} />
+            <AdminRoute exact path="/admin-courses" component={AdminPage} />
             <AdminRoute exact path="/admin-lessons" component={AllLessons} />
             <AdminRoute exact path="/admin-create-course" component={CreateCourse} />
             <AdminRoute exact path="/admin-create-lesson" component={CreateLesson} />

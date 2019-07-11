@@ -9,7 +9,35 @@ class Navbar extends React.Component {
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
     
-    if (user) {
+    if(user && user.admin) {
+      return (
+          <Menu.Menu position='right'>
+
+            <Link to="/admin-crud">
+              <Menu.Item>
+              Crud
+              </Menu.Item>
+            </Link>
+
+            <Link to="/admin-courses">
+              <Menu.Item>
+              Courses
+              </Menu.Item>
+            </Link>
+
+            <Menu.Item
+              name='Users'
+              // make this a link like above courses link once the user crud page is created
+            />
+            <Menu.Item
+              name='logout'
+              onClick={ () => handleLogout(this.props.history) }
+            />
+          </Menu.Menu>
+      )
+    }
+
+    else if (user) {
       return (
         <Menu.Menu position='right'>
           <Menu.Item
@@ -18,7 +46,8 @@ class Navbar extends React.Component {
           />
         </Menu.Menu>
       )
-    } else {
+    } 
+    else {
       return (
         <Menu.Menu position='right'>
           <Link to='/login'>
