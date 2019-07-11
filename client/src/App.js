@@ -2,7 +2,7 @@ import React, { Fragment, } from 'react';
 import Home from './components/Home';
 import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
-// import Footer from './components/Footer'
+import Footer from './components/Footer'
 import Login from './components/auth/Login';
 import FetchUser from './components/auth/FetchUser';
 import AdminPage from './components/admin/AdminPage';
@@ -13,6 +13,8 @@ import EditCourse from './components/admin/AdminCourses/AllCourses';
 import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
 import AllLessons from './components/admin/AdminLesson/AllLessons';
+import AdminRoute from './components/auth/AdminRoutes';
+import ProtectedRoute from './components/auth/ProtectedRoutes';
 
 
 import CoursePage from './components/Course/CoursePage';
@@ -30,19 +32,20 @@ const App = () => (
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/course/:id" component={CoursePage} />
-            <Route exact path="/lesson/:id" component={LessonPage} />
-           <Route exact path="/admin-landing" component={AdminPage} />
-           <Route exact path="/admin-create-course" component={CreateCourse} />
-           <Route exact path="/admin-create-lesson" component={CreateLesson} />
-           <Route exact path="/admin-create-user" component={CreateUser} />
-           <Route exact path="/admin-edit-course" component={EditCourse} />
-           <Route exact path="/admin-lessons" component={AllLessons} />
-           <Route exact path="/admin-edit-user" component={EditUser} />
-           <Route component={NoMatch} />
+            <ProtectedRoute exact path="/course/:id" component={CoursePage} />
+            <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
+            <AdminRoute exact path="/admin-landing" component={AdminPage} />
+            <AdminRoute exact path="/admin-create-course" component={CreateCourse} />
+            <AdminRoute exact path="/admin-create-lesson" component={CreateLesson} />
+            <AdminRoute exact path="/admin-create-user" component={CreateUser} />
+            <AdminRoute exact path="/admin-edit-course" component={EditCourse} />
+            <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
+            <AdminRoute exact path="/admin-edit-user" component={EditUser} />
+            <Route component={NoMatch} />
+
           </Switch>
         </Container>
-      {/* <Footer /> */}
+      <Footer />
     </FetchUser>
   </Fragment>
 )
