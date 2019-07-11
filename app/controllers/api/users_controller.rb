@@ -1,4 +1,5 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
+
   def index
     user = User.all
   end
