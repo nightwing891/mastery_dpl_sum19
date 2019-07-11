@@ -35,6 +35,7 @@ const App = () => (
             <ProtectedRoute exact path="/course/:id" component={CoursePage} />
             <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
             <AdminRoute exact path="/admin-landing" component={AdminPage} />
+            <AdminRoute exact path="/admin-lessons" component={AllLessons} />
             <AdminRoute exact path="/admin-create-course" component={CreateCourse} />
             <AdminRoute exact path="/admin-create-lesson" component={CreateLesson} />
             <AdminRoute exact path="/admin-create-user" component={CreateUser} />
@@ -42,7 +43,6 @@ const App = () => (
             <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
             <AdminRoute exact path="/admin-edit-user" component={EditUser} />
             <Route component={NoMatch} />
-
           </Switch>
         </Container>
       <Footer />
