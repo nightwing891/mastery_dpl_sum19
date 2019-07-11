@@ -11,6 +11,14 @@ user = User.new({
 })
 user.save!
 
+user = User.new({
+  name: 'notadmin',
+  email: 'notadmin@email.com',
+  password: 'password',
+  admin: false
+})
+user.save!
+
 courses = [1,2,3,4,5,6,7,8,9,10]
 
 10.times do
