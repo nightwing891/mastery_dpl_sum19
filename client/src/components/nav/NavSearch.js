@@ -8,8 +8,12 @@ class NavSearch extends Component {
     results: [],
    }
 
+toggle = () => {
+  this.setState({results: []})
+}
+
 getInfo = () => {
-  axios.get(`/api/courses`)
+     axios.get(`/api/courses`)
     .then( data  => {
       this.setState({
         results: data.data
@@ -25,8 +29,9 @@ handleInputChange = () => {
     query: this.search.value
   }, () => {
     if (this.state.query && this.state.query.length > 0) {
-      this.getInfo()     
+      this.getInfo()
     }
+    else {this.toggle()}
   })
 }
 
@@ -39,7 +44,7 @@ handleInputChange = () => {
           ref={input => this.search = input}
           onChange={this.handleInputChange}
         />
-        <Suggestions results={this.state.results} />
+        <Suggestions toggle={this.toggle} results={this.state.results} query={this.state.query} />
       </form>
     )
   }

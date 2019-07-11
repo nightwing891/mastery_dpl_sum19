@@ -42,6 +42,7 @@ const App = () => (
             <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
             <AdminRoute exact path="/admin-edit-user" component={EditUser} />
             <Route component={NoMatch} />
+
           </Switch>
         </Container>
       <Footer />
