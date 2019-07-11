@@ -2,13 +2,13 @@ import React from 'react';
 import { Grid, Card,} from "semantic-ui-react";
 import { Link } from 'react-router-dom';
 
-const Course = ({title, subtitle, description, workbook, id}) => (
+const Course = ({title, subtitle, description, workbook, id, }) => (
   <Grid>
     <Grid.Row relaxed columns={4}>
         <Grid.Column>
           <Card>
             <Card.Content>
-              <Card.Header><Link to={{ pathname: './admin-edit-lesson', state: { id, title, description, workbook, subtitle } }} >{ title }</Link></Card.Header>
+              <Card.Header><Link to={{ pathname: './admin-lessons', state: { id, title, description, workbook, subtitle }  }} >{ title }</Link></Card.Header>
             </Card.Content>
           </Card>
       </Grid.Column>
