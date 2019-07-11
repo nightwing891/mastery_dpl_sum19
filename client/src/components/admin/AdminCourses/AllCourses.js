@@ -36,6 +36,7 @@ class AllCourses extends Component {
      })
   }
 
+
   renderCourses = () => {
     const { courses } = this.state
     return courses.map( course => <Course key={course.id} {...course} remove={this.deleteCourse} edit={this.updateCourse} /> )

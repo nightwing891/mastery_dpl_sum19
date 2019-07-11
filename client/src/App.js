@@ -37,7 +37,7 @@ const App = () => (
            <Route exact path="/admin-create-lesson" component={CreateLesson} />
            <Route exact path="/admin-create-user" component={CreateUser} />
            <Route exact path="/admin-edit-course" component={EditCourse} />
-           <Route exact path="/admin-edit-lesson" component={AllLessons} />
+           <Route exact path="/admin-lessons" component={AllLessons} />
            <Route exact path="/admin-edit-user" component={EditUser} />
            <Route component={NoMatch} />
           </Switch>

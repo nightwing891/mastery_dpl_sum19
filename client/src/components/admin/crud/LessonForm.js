@@ -54,7 +54,7 @@ class LessonForm extends React.Component {
             value={course_id}
             placeholder='Select Course'
             onChange={this.handleChange}
-            options={courseOptions}
+   
           />
           <Form.Input
             label="Instructor"
@@ -115,10 +115,10 @@ class LessonForm extends React.Component {
             autoFocus
             required         
             name='complete'
-            value={complete}
+          
             placeholder='complete'
             onChange={this.handleChange}
-            options={completeOptions}
+      
           />
           <Segment textAlign='center' basic>
             <Button primary type='submit'>Submit</Button>

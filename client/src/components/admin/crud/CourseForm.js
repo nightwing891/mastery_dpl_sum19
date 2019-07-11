@@ -24,6 +24,7 @@ class CourseForm extends React.Component {
     this.props.add(this.state);
     }
     this.setState({ title: '', subtitle: '', description: '', workbook: '' });
+    
     }
 
 
