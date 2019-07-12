@@ -36,7 +36,7 @@ class CoursePage extends React.Component {
         <CourseDescription
           description={description}
         />
-        <CourseOverview/>
+        <CourseOverview lessons={lessons}/>
         <LessonIndex lessons={lessons}/>
         <CourseLessonPlan/>
       </>
