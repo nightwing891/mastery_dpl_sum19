@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Footer, Dimmer, Loader } from 'semantic-ui-react';
+import HomepageHero from './HomepageHero';
 import Reviews from './Reviews';
 import axios from 'axios';
 import CourseIndex from './Course/CouseIndex';
@@ -28,10 +29,8 @@ class Home extends Component {
     const { loaded } = this.state
     if(loaded && this.state.courses.length > 0)
     return(
-      <>    
-      <h1>DevPoint University</h1>
-      <p>Learn It, Code It, Build It</p>
-      <h2>Let your SKILLS do the talking.</h2>
+      <>  
+      <HomepageHero /> 
 
       <div className="home-videos">
         <div className="video">
