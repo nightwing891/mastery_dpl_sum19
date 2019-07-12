@@ -4,7 +4,6 @@ import Course from './Course';
 import { CourseConsumer } from '../../../providers/CourseProvider';
 
 class AllCourses extends Component {
-
   renderCourses = () => {
     const { courses } = this.props.course
     return courses.map( course => <Course key={course.id} {...course} /> )
