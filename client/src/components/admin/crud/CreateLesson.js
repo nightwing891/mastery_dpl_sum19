@@ -45,7 +45,6 @@ class CreateLesson extends React.Component {
 
    return(
       <>
-      <Navbar />
       <h1>Create Lesson</h1>
       <LessonForm add={this.addLesson} render={this.renderCourses}/>
       </>

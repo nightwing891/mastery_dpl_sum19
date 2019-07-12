@@ -3,6 +3,8 @@ import { Button, Form, Segment, Header, Select } from 'semantic-ui-react';
 import CreateLesson from './CreateLesson';
 import axios from 'axios';
 
+// put this form in the admin course show page http://localhost:3000/admin-lessons
+
 class LessonForm extends React.Component {
   state = { instructor: '', title: '', subtitle: '', description: '', length: '', body: '', complete: '', course_id: '' }
 
@@ -61,7 +63,7 @@ class LessonForm extends React.Component {
             autoFocus
             required         
             name='instructor'
-            value={title}
+            value={instructor}
             placeholder='Instructor'
             onChange={this.handleChange}
           />
