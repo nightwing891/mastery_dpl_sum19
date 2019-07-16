@@ -1,20 +1,20 @@
 import React, { Fragment, } from 'react';
-import Home from './components/Home';
-import NoMatch from './components/NoMatch';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer'
-import Login from './components/auth/Login';
-import FetchUser from './components/auth/FetchUser';
 import AdminPage from './components/admin/AdminPage';
 import AdminCrud from './components/admin/AdminCrud';
+import AllLessons from './components/admin/AdminLesson/AllLessons';
+import AdminRoute from './components/auth/AdminRoutes';
 import CreateCourse from './components/admin/crud/CreateCourse';
 import CreateLesson from './components/admin/crud/CreateLesson';
 import CreateUser from './components/admin/crud/CreateUser';
 import EditCourse from './components/admin/AdminCourses/AllCourses';
 import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
-import AllLessons from './components/admin/AdminLesson/AllLessons';
-import AdminRoute from './components/auth/AdminRoutes';
+import FetchUser from './components/auth/FetchUser';
+import Footer from './components/Footer'
+import Login from './components/auth/Login';
+import Home from './components/Home';
+import NoMatch from './components/NoMatch';
+import Navbar from './components/Navbar';
 import ProtectedRoute from './components/auth/ProtectedRoutes';
 
 

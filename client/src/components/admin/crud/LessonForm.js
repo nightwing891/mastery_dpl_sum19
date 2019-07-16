@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { CourseConsumer } from '../../../providers/CourseProvider';
 import { Button, Form, Segment, Header, Select } from 'semantic-ui-react';
 import CreateLesson from './CreateLesson';
 import axios from 'axios';
@@ -6,10 +7,9 @@ import axios from 'axios';
 // put this form in the admin course show page http://localhost:3000/admin-lessons
 
 class LessonForm extends React.Component {
-  state = { instructor: '', title: '', subtitle: '', description: '', length: '', body: '', complete: '', course_id: '' }
+  state = { instructor: '', title: '', subtitle: '', description: '', length: '', body: '', course_id: '' }
 
   componentDidMount() {
-    
     if (this.props.id)
       this.setState({ 
         instructor: this.props.instructor,
@@ -17,8 +17,8 @@ class LessonForm extends React.Component {
         subtitle: this.props.subtitle, description: this.props.description, length: this.props.length, 
         body: this.props.body,
         complete: this.props.complete,
-        course_id: this.props.course_id
         })
+    this.setState({ course_id: this.props.courseId })
   }
 
   handleChange = (e) => {
@@ -34,7 +34,7 @@ class LessonForm extends React.Component {
       this.props.edit(lesson)
       this.props.close()
     } else {
-    this.props.add(this.state);
+      this.props.lesson.addLesson(this.state);
     }
     this.setState({ instructor: '', title: '', subtitle: '', description: '', length: '', body: '', complete: '', course_id: '' });
     }
@@ -48,16 +48,6 @@ class LessonForm extends React.Component {
       <Segment basic>
         <Header as='h1' textAlign='center'>Lesson</Header>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Input
-            label="CourseId"
-            autoFocus
-            required         
-            name='courseid'
-            value={course_id}
-            placeholder='Select Course'
-            onChange={this.handleChange}
-   
-          />
           <Form.Input
             label="Instructor"
             autoFocus
@@ -112,16 +102,6 @@ class LessonForm extends React.Component {
             placeholder='Body'
             onChange={this.handleChange}
           />
-          <Form.Select
-            label="Complete"
-            autoFocus
-            required         
-            name='complete'
-          
-            placeholder='complete'
-            onChange={this.handleChange}
-      
-          />
           <Segment textAlign='center' basic>
             <Button primary type='submit'>Submit</Button>
           </Segment>
@@ -137,8 +117,12 @@ const completeOptions = [
   { key: "f", text: "False", value: false }
 ]
 
-const courseOptions = [
-
-]
-
-export default LessonForm;
+export default class ConnectedLessonForm extends Component {
+  render() {
+    return (
+      <CourseConsumer>
+        { lesson => <LessonForm { ...this.props } lesson={lesson} />}
+      </CourseConsumer>
+    )
+  }
+}
