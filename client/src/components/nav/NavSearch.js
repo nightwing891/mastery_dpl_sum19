@@ -38,11 +38,16 @@ handleInputChange = () => {
   render() {
     const { course, filter } = this.state;
     return (
-      <form>
+      <form style={{ marginLeft: '20%'}}>
         <input 
           required placeholder="Search" 
           ref={input => this.search = input}
           onChange={this.handleInputChange}
+          style={{ 
+            height: '30px',
+            width: '400px'
+            
+        }}
         />
         <Suggestions toggle={this.toggle} results={this.state.results} query={this.state.query} />
       </form>
