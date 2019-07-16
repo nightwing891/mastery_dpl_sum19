@@ -14,12 +14,12 @@ import EditCourse from './components/admin/AdminCourses/AllCourses';
 import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
 import AllLessons from './components/admin/AdminLesson/AllLessons';
+import LessonContent from './components/admin/AdminLesson/LessonContent';
 import AdminRoute from './components/auth/AdminRoutes';
 import ProtectedRoute from './components/auth/ProtectedRoutes';
-
-
 import CoursePage from './components/Course/CoursePage';
 import LessonPage from './components/Lesson/LessonPage';
+import  AdminLessonPage from './components/admin/AdminLesson/AdminLessonPage';
 
 
 import { Switch, Route, } from 'react-router-dom';
@@ -35,6 +35,7 @@ const App = () => (
             <Route exact path="/login" component={Login} />
             <ProtectedRoute exact path="/course/:id" component={CoursePage} />
             <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
+            <AdminRoute exact path="/admin/lesson/:id" component={AdminLessonPage} />
             <AdminRoute exact path="/admin-crud" component={AdminCrud} />
             <AdminRoute exact path="/admin-courses" component={AdminPage} />
             <AdminRoute exact path="/admin-lessons" component={AllLessons} />
