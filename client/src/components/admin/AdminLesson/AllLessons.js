@@ -8,7 +8,7 @@ import { CourseConsumer } from '../../../providers/CourseProvider';
 import { Link } from 'react-router-dom';
 
 // this page is /admin-lessons
-// need to create a delete course button - use a provider and a consumer for this component
+// need to create a create lesson button
 
 class AllLessons extends React.Component {
   state = {lessons: []}
@@ -57,10 +57,23 @@ class AllLessons extends React.Component {
         }} >
           <Button 
             size='small' 
-            color="red"
+            color="yellow"
             
           >
             Edit Course
+          </Button> 
+        </Link>
+
+        <Link to = {{ 
+          pathname: './admin-create-lesson', 
+          state: { courseId: id }
+        }} >
+          <Button 
+            size='small' 
+            color="green"
+            
+          >
+            Create Lesson
           </Button> 
         </Link>
       </div>

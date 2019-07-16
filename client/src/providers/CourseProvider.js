@@ -6,7 +6,7 @@ export const CourseConsumer = CourseContext.Consumer;
 
 export class CourseProvider extends Component {
 
-  state = { courses: [] }
+  state = { courses: [], lessons: [] }
 
   componentDidMount() {
     axios.get("/api/courses")
@@ -53,6 +53,18 @@ export class CourseProvider extends Component {
      })
    }
 
+   addLesson = (lesson) => {
+     axios.post(`/api/courses/${lesson.course_id}/lessons`, { lesson } )
+     .then( res => {
+       const { lessons } = this.state
+       this.setState({ lessons: [...lessons, res.data] })
+       window.location.href = '/admin-courses'
+     })
+     .catch( err => {
+       console.log(err)
+     })
+   }
+
   render() {
     return (
       <CourseContext.Provider value={{
@@ -60,6 +72,7 @@ export class CourseProvider extends Component {
         deleteCourse: this.deleteCourse,
         updateCourse: this.updateCourse,
         addCourse: this.addCourse,
+        addLesson: this.addLesson,
       }}>
         { this.props.children }
       </CourseContext.Provider>
