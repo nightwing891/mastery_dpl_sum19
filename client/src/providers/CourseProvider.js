@@ -28,6 +28,7 @@ export class CourseProvider extends Component {
            return c
        })
        this.setState({ courses })
+       window.location.href = '/admin-courses'
      })
   }
 
@@ -40,12 +41,25 @@ export class CourseProvider extends Component {
      })
   }
 
+  addCourse = (course) => {
+    axios.post('/api/courses', { course } )
+     .then( res => {
+       const { courses  } = this.state
+       this.setState({ courses: [...courses, res.data] })
+       window.location.href = '/admin-courses'
+     })
+     .catch( err => {
+       console.log(err)
+     })
+   }
+
   render() {
     return (
       <CourseContext.Provider value={{
         ...this.state,
         deleteCourse: this.deleteCourse,
         updateCourse: this.updateCourse,
+        addCourse: this.addCourse,
       }}>
         { this.props.children }
       </CourseContext.Provider>

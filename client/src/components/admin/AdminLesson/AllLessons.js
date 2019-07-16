@@ -3,8 +3,9 @@ import { Button, Icon } from 'semantic-ui-react';
 import axios from 'axios';
 import LessonList from './LessonList';
 import AdminHeader from '../AdminCourses/AdminHeader';
-import AllCourses from '../AdminCourses/AllCourses';
+import CourseForm from '../crud/CourseForm';
 import { CourseConsumer } from '../../../providers/CourseProvider';
+import { Link } from 'react-router-dom';
 
 // this page is /admin-lessons
 // need to create a delete course button - use a provider and a consumer for this component
@@ -27,7 +28,7 @@ class AllLessons extends React.Component {
 
 
   render() {
-    const { id, title } = this.props.location.state
+    const { id, title, description, workbook, subtitle, } = this.props.location.state
     const { deleteCourse } = this.props.course
     const { lessons } = this.state
     return(  
@@ -49,6 +50,19 @@ class AllLessons extends React.Component {
         >
           Delete Course
         </Button> 
+
+        <Link to = {{ 
+          pathname: './admin-create-course', 
+          state: { id, title, description, workbook, subtitle, }
+        }} >
+          <Button 
+            size='small' 
+            color="red"
+            
+          >
+            Edit Course
+          </Button> 
+        </Link>
       </div>
     )
   }
