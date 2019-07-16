@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { CourseConsumer } from '../../../providers/CourseProvider';
 import { Button, Form, Segment, Header, } from 'semantic-ui-react';
 
 class CourseForm extends React.Component {
   state = { title: '', subtitle: '', description: '', workbook: '' }
 
   componentDidMount() {
-    
-    if (this.props.id)
-      this.setState({ title: this.props.title, subtitle: this.props.subtitle, description: this.props.description, workbook: this.props.workbook, id: this.props.id  })
+    if (this.props.currentCourse)
+      this.setState({ title: this.props.currentCourse.title, subtitle: this.props.currentCourse.subtitle, description: this.props.currentCourse.description, workbook: this.props.currentCourse.workbook, id: this.props.currentCourse.id  })
   }
 
   handleChange = (e) => {
@@ -17,11 +17,11 @@ class CourseForm extends React.Component {
  
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.props.id) {
-      this.props.edit(this.state)
-      this.props.close()
-    } else {
-    this.props.add(this.state);
+    if (this.props.currentCourse) {
+      this.props.course.updateCourse(this.state)
+    } 
+    else {
+    this.props.course.addCourse(this.state);
     }
     this.setState({ title: '', subtitle: '', description: '', workbook: '' });
     
@@ -82,5 +82,14 @@ class CourseForm extends React.Component {
   }
 }
 
+// export default CourseForm;
 
-export default CourseForm;
+export default class ConnectedCourseForm extends Component {
+  render() {
+    return (
+      <CourseConsumer>
+        { course => <CourseForm { ...this.props } course={course} />}
+      </CourseConsumer>
+    )
+  }
+}
