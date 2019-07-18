@@ -40,7 +40,7 @@ class AllLessons extends React.Component {
 
         <h1>All Lessons</h1>
           <ul>
-          { lessons.map( lesson => <LessonList key={lesson.id} {...lesson} /> )}
+          { lessons.map( lesson => <LessonList key={lesson.id} {...lesson}  /> )}
         </ul>
 
         <Button 
@@ -66,7 +66,7 @@ class AllLessons extends React.Component {
 
         <Link to = {{ 
           pathname: './admin-create-lesson', 
-          state: { courseId: id }
+          state: { course_id: id }
         }} >
           <Button 
             size='small' 
@@ -76,6 +76,7 @@ class AllLessons extends React.Component {
             Create Lesson
           </Button> 
         </Link>
+        
       </div>
     )
   }

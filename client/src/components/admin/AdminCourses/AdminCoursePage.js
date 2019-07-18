@@ -7,8 +7,6 @@ import axios from 'axios';
 
 class AdminCoursePage extends React.Component {
 
-
-
   render() {
     const { title, subtitle, id } = this.props.location.state
    
