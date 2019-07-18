@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, } from 'semantic-ui-react'
+import { Menu, Grid, } from 'semantic-ui-react'
 import { Link, withRouter, } from 'react-router-dom'
 import NavSearch from './nav/NavSearch';
 
@@ -75,8 +75,8 @@ class Navbar extends React.Component {
               active={this.props.location.pathname === '/'}
             />
           </Link>
-            { this.rightNavItems() }
             <NavSearch />
+            { this.rightNavItems() }
         </Menu>
       </div>
     )

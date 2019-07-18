@@ -9,7 +9,7 @@ const LessonList = ({id, instructor, title, subtitle, description, length, body,
           <Card>
            
             <Card.Content>
-              <Card.Header><Link to={{ pathname: `./course/${id}`, state: { id, instructor, title, subtitle, description, length, body, complete } }} >{ title }</Link></Card.Header>
+              <Card.Header><Link to={{ pathname: `./admin/lesson/${id}`, state: { id, instructor, title, subtitle, description, length, body, complete } }} >{ title }</Link></Card.Header>
             </Card.Content>
           </Card>
       </Grid.Column>

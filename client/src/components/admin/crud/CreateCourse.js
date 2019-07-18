@@ -18,23 +18,11 @@ class CreateCourse extends React.Component {
       })
   }
 
-  addCourse = (course) => {
-   axios.post('/api/courses', { course } )
-    .then( res => {
-      const { courses  } = this.state
-      this.setState({ courses: [...courses, res.data] })
-    })
-    .catch( err => {
-      console.log(err)
-    })
-  }
-
   render() {
-    const { title, subtitle, description, workbook, id } = this.props
     return(
       <>
-      <h1>Create Course</h1>
-      <CourseForm add={this.addCourse} />
+      <h1>Create Course</h1> {/* create logic here: edit form if id exists */}
+      <CourseForm  currentCourse={this.props.location.state}/>
       </>
 
     )
