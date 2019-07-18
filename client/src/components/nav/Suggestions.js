@@ -6,9 +6,10 @@ const SearchSuggestions = ({results, query, toggle}) => {
   if(results.length > 0) {
     const options = results.map(r => {
       const regex = new RegExp(query, 'gi')
+      const { id, title, description, workbook, subtitle, } = r
       if (r.title.match(regex)) 
         return(<li key={r.id}>
-          <Link onClick={toggle} to={`/courses/${r.id}`}>{r.title}</Link>
+          <Link onClick={toggle} to={{pathname: `/course/${r.id}`, state: { id, title, description, workbook, subtitle, } }}>{r.title}</Link>
         </li>)
     })
     return <ul>{options}</ul>
