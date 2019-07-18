@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Login from './components/auth/Login';
 import FetchUser from './components/auth/FetchUser';
 import AdminPage from './components/admin/AdminPage';
+import AdminUsersPage from './components/admin/AdminUsersPage';
 import AdminCrud from './components/admin/AdminCrud';
 import CreateCourse from './components/admin/crud/CreateCourse';
 import CreateLesson from './components/admin/crud/CreateLesson';
@@ -16,10 +17,9 @@ import EditUser from './components/admin/crud/EditUser';
 import AllLessons from './components/admin/AdminLesson/AllLessons';
 import AdminRoute from './components/auth/AdminRoutes';
 import ProtectedRoute from './components/auth/ProtectedRoutes';
-
-
 import CoursePage from './components/Course/CoursePage';
 import LessonPage from './components/Lesson/LessonPage';
+import UserShow from './components/admin/UserShow';
 
 
 import { Switch, Route, } from 'react-router-dom';
@@ -44,6 +44,8 @@ const App = () => (
             <AdminRoute exact path="/admin-edit-course" component={EditCourse} />
             <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
             <AdminRoute exact path="/admin-edit-user" component={EditUser} />
+            <AdminRoute exact path="/admin-users" component={AdminUsersPage} />
+            <AdminRoute exact path="/users/:id" component={UserShow} />
             <Route component={NoMatch} />
           </Switch>
         </Container>

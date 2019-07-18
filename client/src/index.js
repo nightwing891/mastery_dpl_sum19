@@ -6,15 +6,18 @@ import { BrowserRouter, } from 'react-router-dom';
 import { AuthProvider, } from "./providers/AuthProvider";
 import { CourseProvider, } from "./providers/CourseProvider";
 import { initMiddleware } from 'devise-axios';
+import { UserProvider } from './providers/UserProvider';
 
 initMiddleware();
 
 ReactDOM.render(
   <AuthProvider>
     <CourseProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </UserProvider>
     </CourseProvider>
   </AuthProvider>,
   document.getElementById('root')
