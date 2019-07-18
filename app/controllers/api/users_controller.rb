@@ -1,15 +1,20 @@
 class Api::UsersController < ApplicationController
 
   def index
-    user = User.all
+    render json:  User.all
   end
 
-def create
+  def create
   # Use devise
   end
 
   def update
-  # Use devise
+  user = User.find(params[:id])
+    if user.update(user_params)
+      render json: user
+    else
+      render json: { errors: user.errors }, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -17,11 +22,14 @@ def create
   end
 
   def show
+    @user = User.find(params[:id])
+    render json: @user
   end
 
   private
 
   def user_params
+    params.require(:user).permit(:name, :email, :password, :admin, :id)
   end
 
 end

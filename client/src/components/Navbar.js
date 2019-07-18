@@ -25,10 +25,12 @@ class Navbar extends React.Component {
               </Menu.Item>
             </Link>
 
-            <Menu.Item
-              name='Users'
-              // make this a link like above courses link once the user crud page is created
-            />
+          <Link to="/admin-users">
+            <Menu.Item>
+              Users
+            </Menu.Item>
+          </Link>
+
             <Menu.Item
               name='logout'
               onClick={ () => handleLogout(this.props.history) }

@@ -1,5 +1,6 @@
 import React, { Fragment, } from 'react';
 import AdminPage from './components/admin/AdminPage';
+import AdminUsersPage from './components/admin/AdminUsersPage';
 import AdminCrud from './components/admin/AdminCrud';
 import AllLessons from './components/admin/AdminLesson/AllLessons';
 import AdminRoute from './components/auth/AdminRoutes';
@@ -19,9 +20,8 @@ import Navbar from './components/Navbar';
 import ProtectedRoute from './components/auth/ProtectedRoutes';
 import CoursePage from './components/Course/CoursePage';
 import LessonPage from './components/Lesson/LessonPage';
+import UserShow from './components/admin/UserShow';
 import AdminLessonPage from './components/admin/AdminLesson/AdminLessonPage';
-
-
 import { Switch, Route, } from 'react-router-dom';
 import { Container, } from "semantic-ui-react";
 
@@ -45,6 +45,8 @@ const App = () => (
             <AdminRoute exact path="/admin-edit-course" component={EditCourse} />
             <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
             <AdminRoute exact path="/admin-edit-user" component={EditUser} />
+            <AdminRoute exact path="/admin-users" component={AdminUsersPage} />
+            <AdminRoute exact path="/users/:id" component={UserShow} />
             <Route component={NoMatch} />
           </Switch>
         </Container>
