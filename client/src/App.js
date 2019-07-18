@@ -12,7 +12,7 @@ import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
 import LessonContent from './components/admin/AdminLesson/LessonContent';
 import FetchUser from './components/auth/FetchUser';
-import Footer from './components/Footer'
+import Footer2 from './components/Footer2'
 import Login from './components/auth/Login';
 import Home from './components/Home';
 import NoMatch from './components/NoMatch';
@@ -50,7 +50,7 @@ const App = () => (
             <Route component={NoMatch} />
           </Switch>
         </Container>
-      <Footer />
+      <Footer2 />
     </FetchUser>
   </Fragment>
 )

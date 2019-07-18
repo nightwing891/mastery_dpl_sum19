@@ -37,6 +37,12 @@ class LessonForm extends React.Component {
     this.setState({ instructor: '', title: '', subtitle: '', description: '', length: '', body: '', complete: '', course_id: '' });
     }
 
+    uploadWidget =() => {
+      window.cloudinary.openUploadWidget({ 
+        cloud_name: 'dtajlsppz', 
+        upload_preset: 'lvexul8t',
+      })
+    }
 
   render() {
     const { instructor, title, subtitle, description, length, body, complete, course_id } = this.state
@@ -91,13 +97,14 @@ class LessonForm extends React.Component {
             placeholder='Length'
             onChange={this.handleChange}
           />
-          <Form.Input
+          <Form.Button
             label="Body"
             autoFocus
             required         
             name='body'
             value={body}
             placeholder='Body'
+            onClick={this.uploadWidget}
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
