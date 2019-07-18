@@ -12,13 +12,14 @@ class LessonForm extends React.Component {
   componentDidMount() {
     if (this.props.id)
       this.setState({ 
+        id: this.props.id,
         instructor: this.props.instructor,
         title: this.props.title, 
         subtitle: this.props.subtitle, description: this.props.description, length: this.props.length, 
         body: this.props.body,
         complete: this.props.complete,
         })
-    this.setState({ course_id: this.props.courseId })
+    this.setState({ course_id: this.props.course_id })
   }
 
   handleChange = (e) => {
@@ -29,10 +30,7 @@ class LessonForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.id) {
-      const { id, instructor, title, subtitle, description, length, body, complete, close } = this.props
-      const lesson = { instructor, title, subtitle, description, length, body, complete }
-      this.props.edit(lesson)
-      this.props.close()
+      this.props.lesson.updateLesson(this.state)
     } else {
       this.props.lesson.addLesson(this.state);
     }
