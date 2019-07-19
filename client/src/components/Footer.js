@@ -1,34 +1,39 @@
 import React from 'react';
-import { Grid, Menu, MenuItem } from 'semantic-ui-react';
+import {
+  Container,
+  Grid,
+  Header,
+  List,
+  Segment,
+} from 'semantic-ui-react'
 
-function Footer( ) {
-  return (
-    <footer>
-      <br/>
-      <br/>
-      <Grid>
-        <Menu justified>
-          <MenuItem
-            eventKey={1}>
-            Privacy Policy
-          </MenuItem>
-          <MenuItem
-            eventKey={2}
-            title="Item">
-            Terms & Conditions
-          </MenuItem>
-          <MenuItem
-            eventKey={3}>
-            Contact Info
-          </MenuItem>
-        </Menu>
 
-        <div className="text-center small copyright">
-          © DPL 2019
-        </div>
+
+const Footer = () => (
+  <Segment inverted vertical style={{ padding: '4em 1em' }}>
+    <Container>
+      <Grid divided inverted stackable>
+      <Grid.Row>
+        <Grid.Column width={7}>
+          <Header inverted as='h4' content='Contact Us' />
+          <List link inverted>
+            <List.Item as='a'>contact@devpointlabs.com</List.Item>
+            <List.Item as='a'>801-448-7240</List.Item>
+            <List.Item as='a'>370 S. 300 E. SLC, UT 84111</List.Item>
+          </List>
+        </Grid.Column>
+        <Grid.Column width={9}>
+          <Header as='h4' inverted>
+            Terms | Privacy Policy
+          </Header>
+          <p>
+            © DPL 2019
+          </p>
+        </Grid.Column>
+      </Grid.Row>
       </Grid>
-    </footer>
-  );
-}
+    </Container>
+  </Segment>
+)
 
 export default Footer;

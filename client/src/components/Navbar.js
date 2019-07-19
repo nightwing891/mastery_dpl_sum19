@@ -64,7 +64,7 @@ class Navbar extends React.Component {
   
   render() {
     return (
-      <div>
+      <div style={{ padding: '8px 16px'}}>
         <Menu pointing secondary>
           <Link to='/'>
             <Menu.Item

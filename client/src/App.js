@@ -23,7 +23,7 @@ import AdminLessonPage from './components/admin/AdminLesson/AdminLessonPage';
 
 
 import { Switch, Route, } from 'react-router-dom';
-import { Container, } from "semantic-ui-react";
+import { Container, Divider, } from "semantic-ui-react";
 
 const App = () => (
   <Fragment>
