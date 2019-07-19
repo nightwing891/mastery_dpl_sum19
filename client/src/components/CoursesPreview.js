@@ -29,9 +29,12 @@ const CoursesPreview = ({}) => (
             <span>
             <Video
               cloudName='dtajlsppz'
-              publicId='Ivy2'
+              publicId='Ivy5'
               width='300'
               controls='true'
+              loop='true'
+              autoplay='true'
+
             />
             </span>
           </p>

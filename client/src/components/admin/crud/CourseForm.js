@@ -34,7 +34,6 @@ class CourseForm extends React.Component {
     return(
      
       <Segment basic style={{background:'#f5f5f5'}}>
-        <Header as='h1' textAlign='center'>Course</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
             label="Title"
