@@ -4,6 +4,7 @@ import HomepageHero from './HomepageHero';
 import Reviews from './Reviews';
 import axios from 'axios';
 import CourseIndex from './Course/CouseIndex';
+import CoursesPreview from './CoursesPreview';
 
 class Home extends Component {
 
@@ -32,20 +33,11 @@ class Home extends Component {
       <>  
       <HomepageHero /> 
 
-      <div className="home-videos">
-        <div className="video">
-          <p>Video goes here + link </p>
-          <h4>Description of the video</h4>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      
-        <CourseIndex courses={this.state.courses}/>
-
-      <h2>Reviews</h2>
-        <Reviews />   
+      <CoursesPreview />
+          
+      <CourseIndex courses={this.state.courses}/>
+        
+      <Reviews />   
       </>
     )
     else

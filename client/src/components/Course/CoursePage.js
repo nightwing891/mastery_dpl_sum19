@@ -10,17 +10,17 @@ import axios from 'axios';
 
 class CoursePage extends React.Component {
 
-  state = { lessons:[] }
+  state = { lessons: [] }
 
-  componentDidMount(){
+  componentDidMount() {
     const { id } = this.props.location.state
     axios.get(`/api/courses/${id}`)
-    .then( res => {
-      this.setState({ lessons: res.data })
-    })
-    .catch ( err => {
-      console.log(err)
-    })
+      .then(res => {
+        this.setState({ lessons: res.data })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
@@ -36,9 +36,9 @@ class CoursePage extends React.Component {
         <CourseDescription
           description={description}
         />
-        <CourseOverview lessons={lessons}/>
-        <LessonIndex lessons={lessons}/>
-        <CourseLessonPlan/>
+        <CourseOverview lessons={lessons} />
+        <LessonIndex lessons={lessons} />
+        <CourseLessonPlan />
       </>
 
     )

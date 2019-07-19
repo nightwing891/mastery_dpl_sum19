@@ -12,7 +12,7 @@ import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
 import LessonContent from './components/admin/AdminLesson/LessonContent';
 import FetchUser from './components/auth/FetchUser';
-import Footer2 from './components/Footer2'
+import Footer from './components/Footer';
 import Login from './components/auth/Login';
 import Home from './components/Home';
 import NoMatch from './components/NoMatch';
@@ -23,13 +23,17 @@ import LessonPage from './components/Lesson/LessonPage';
 import UserShow from './components/admin/UserShow';
 import AdminLessonPage from './components/admin/AdminLesson/AdminLessonPage';
 import { Switch, Route, } from 'react-router-dom';
-import { Container, } from "semantic-ui-react";
+import { Container, Divider, } from "semantic-ui-react";
 
 const App = () => (
   <Fragment>
     <Navbar />
-      <FetchUser>
-        <Container>
+    <FetchUser>
+
+      <div
+        style={{ width: '100%', background: 'black' }}
+      >
+        <Container style={{ background: '#F5F5F5' }}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
@@ -50,7 +54,9 @@ const App = () => (
             <Route component={NoMatch} />
           </Switch>
         </Container>
-      <Footer2 />
+      </div>
+
+      <Footer />
     </FetchUser>
   </Fragment>
 )
