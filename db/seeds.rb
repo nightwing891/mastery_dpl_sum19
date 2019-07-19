@@ -35,6 +35,7 @@ courses = [1,2,3,4,5,6,7,8,9,10]
       subtitle: Faker::Hipster.sentence,
       description:Faker::Hipster.paragraph,
       length: Faker::Number.between(4, 20),
+      body: 'Screen Recording',
       complete: false,
       course_id: courses.sample
   )

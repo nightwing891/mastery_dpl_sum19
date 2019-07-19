@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Video } from 'cloudinary-react';
+import { Container, Header, Divider, Segment } from 'semantic-ui-react';
 
 class LessonPage extends Component {
 
@@ -9,17 +11,28 @@ class LessonPage extends Component {
     const { id, instructor, title, subtitle, description, length, body } = this.props.location.state;
     return(
       <>
-      <p>Fill in this page at client/src/components/Lesson/LessonPage. Things to add: </p>
-      <ul>
-        <li>instructor - {instructor}</li>
-        <li>title - {title}</li>
-        <li>subtitle - {subtitle}</li>
-        <li>description - {description}</li>
-        <li>length - {length}</li>
-        <li>body - {body}</li>
-      </ul>
-      <br/>
-      <br/>
+        <Container fluid>
+          <Header as='h3'>
+            <Header.Content>
+              {title}
+            <Header.Subheader>{ subtitle }</Header.Subheader>
+        </Header.Content>
+      </Header>
+      <center>
+      <Video 
+        cloudName='dtajlsppz' 
+        publicId={body}
+        width='960'
+        controls='true'
+      />
+      </center>
+      <Header as='h3' >
+        <Header.Content>
+          Description
+          <Header.Subheader>{ description }</Header.Subheader>
+        </Header.Content>
+      </Header>
+      </Container>
       </>
     )
   }
