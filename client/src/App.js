@@ -28,8 +28,11 @@ import { Container, } from "semantic-ui-react";
 const App = () => (
   <Fragment>
     <Navbar />
-      <FetchUser>
-        <Container>
+    <FetchUser>
+      <div
+        style={{ width: '100%', background: 'black' }}
+      >
+        <Container style={{ background: '#F5F5F5' }}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
@@ -50,6 +53,8 @@ const App = () => (
             <Route component={NoMatch} />
           </Switch>
         </Container>
+
+      </div>
       <Footer />
     </FetchUser>
   </Fragment>
