@@ -4,6 +4,7 @@ import HomepageHero from './HomepageHero';
 import Reviews from './Reviews';
 import axios from 'axios';
 import CourseIndex from './Course/CouseIndex';
+import VideoGrid from './CoursesPreview'
 
 class Home extends Component {
 
@@ -30,22 +31,10 @@ class Home extends Component {
     if(loaded && this.state.courses.length > 0)
     return(
       <>  
-      <HomepageHero /> 
+        <HomepageHero /> 
 
-      <div className="home-videos">
-        <div className="video">
-          <p>Video goes here + link </p>
-          <h4>Description of the video</h4>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      
-      <h2> Create Courses Preview</h2>
-        <CourseIndex courses={this.state.courses}/>
+        <VideoGrid />
 
-      <h2>Reviews</h2>
         <Reviews />   
       </>
     )

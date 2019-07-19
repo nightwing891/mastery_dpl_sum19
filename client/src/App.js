@@ -23,33 +23,39 @@ import LessonPage from './components/Lesson/LessonPage';
 import UserShow from './components/admin/UserShow';
 import AdminLessonPage from './components/admin/AdminLesson/AdminLessonPage';
 import { Switch, Route, } from 'react-router-dom';
-import { Container, } from "semantic-ui-react";
+import { Container, Divider, } from "semantic-ui-react";
 
 const App = () => (
   <Fragment>
     <Navbar />
     <FetchUser>
-      <Container>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <ProtectedRoute exact path="/course/:id" component={CoursePage} />
-          <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
-          <AdminRoute exact path="/admin/lesson/:id" component={AdminLessonPage} />
-          <AdminRoute exact path="/admin-crud" component={AdminCrud} />
-          <AdminRoute exact path="/admin-courses" component={AdminPage} />
-          <AdminRoute exact path="/admin-lessons" component={AllLessons} />
-          <AdminRoute exact path="/admin-create-course" component={CreateCourse} />
-          <AdminRoute exact path="/admin-create-lesson" component={CreateLesson} />
-          <AdminRoute exact path="/admin-create-user" component={CreateUser} />
-          <AdminRoute exact path="/admin-edit-course" component={EditCourse} />
-          <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
-          <AdminRoute exact path="/admin-edit-user" component={EditUser} />
-          <AdminRoute exact path="/admin-users" component={AdminUsersPage} />
-          <AdminRoute exact path="/users/:id" component={UserShow} />
-          <Route component={NoMatch} />
-        </Switch>
-      </Container>
+
+      <div
+        style={{ width: '100%', background: 'black' }}
+      >
+        <Container style={{ background: '#F5F5F5' }}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <ProtectedRoute exact path="/course/:id" component={CoursePage} />
+            <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
+            <AdminRoute exact path="/admin/lesson/:id" component={AdminLessonPage} />
+            <AdminRoute exact path="/admin-crud" component={AdminCrud} />
+            <AdminRoute exact path="/admin-courses" component={AdminPage} />
+            <AdminRoute exact path="/admin-lessons" component={AllLessons} />
+            <AdminRoute exact path="/admin-create-course" component={CreateCourse} />
+            <AdminRoute exact path="/admin-create-lesson" component={CreateLesson} />
+            <AdminRoute exact path="/admin-create-user" component={CreateUser} />
+            <AdminRoute exact path="/admin-edit-course" component={EditCourse} />
+            <AdminRoute exact path="/admin-edit-lesson" component={AllLessons} />
+            <AdminRoute exact path="/admin-edit-user" component={EditUser} />
+            <AdminRoute exact path="/admin-users" component={AdminUsersPage} />
+            <AdminRoute exact path="/users/:id" component={UserShow} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Container>
+      </div>
+
       <Footer />
     </FetchUser>
   </Fragment>
