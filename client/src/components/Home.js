@@ -42,7 +42,6 @@ class Home extends Component {
       <br />
       <br />
       
-      <h2> Create Courses Preview</h2>
         <CourseIndex courses={this.state.courses}/>
 
       <h2>Reviews</h2>

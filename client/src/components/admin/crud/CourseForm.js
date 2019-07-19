@@ -33,7 +33,7 @@ class CourseForm extends React.Component {
   
     return(
      
-      <Segment basic>
+      <Segment basic style={{background:'#f5f5f5'}}>
         <Header as='h1' textAlign='center'>Course</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
@@ -73,7 +73,7 @@ class CourseForm extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button type='submit' color='purple'>Submit</Button>
           </Segment>
         </Form>
       </Segment>
