@@ -12,7 +12,7 @@ import EditLesson from './components/admin/crud/EditLesson';
 import EditUser from './components/admin/crud/EditUser';
 import LessonContent from './components/admin/AdminLesson/LessonContent';
 import FetchUser from './components/auth/FetchUser';
-import Footer2 from './components/Footer2'
+import Footer from './components/Footer'
 import Login from './components/auth/Login';
 import Home from './components/Home';
 import NoMatch from './components/NoMatch';

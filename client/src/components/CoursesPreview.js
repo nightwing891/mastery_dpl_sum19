@@ -4,7 +4,10 @@ import { Video } from 'cloudinary-react';
 
 const CoursesPreview = ({}) => (
   <>
-    <Header as='h2' textAlign='center'>
+    <Header as='h2' inverted textAlign='center' 
+    style={{ 
+      fontSize: '4em',
+       color: '#8168B1' }}>
       Top Lessons
     </Header>
     <Grid columns='equal'>
