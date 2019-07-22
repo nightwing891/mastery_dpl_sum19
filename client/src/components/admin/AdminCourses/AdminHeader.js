@@ -4,18 +4,18 @@ import axios from 'axios';
 
 class AdminHeader extends React.Component {
 
-  
+
   render() {
     const { title, subtitle } = this.props
-    return(
+    return (
       <Container>
-      <Header as="h1">
-        { title }
-      </Header>
-     
-      <br/>
+        <Header as="h1" style={{ padding: '1em', margin: '1em' }}>
+          {title}
+        </Header>
+
+        <br />
       </Container>
-     )
-    }
+    )
   }
+}
 export default AdminHeader;
