@@ -13,12 +13,6 @@ class Navbar extends React.Component {
       return (
           <Menu.Menu position='right'>
 
-            <Link to="/admin-crud">
-              <Menu.Item>
-              Crud
-              </Menu.Item>
-            </Link>
-
             <Link to="/admin-courses">
               <Menu.Item>
               Courses
