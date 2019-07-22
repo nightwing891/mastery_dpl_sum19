@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CourseHeader from './CourseHeader';
-import CourseDescription from './CourseDescription';
+
 import CourseOverview from './CourseOverview';
 import CourseLessonPlan from './CourseLessonPlan';
 import { Header, Button, Divider, Grid, Icon, Search, Segment, Container } from "semantic-ui-react";
@@ -32,13 +32,12 @@ class CoursePage extends React.Component {
           course_id={id}
           title={title}
           subtitle={subtitle}
-        />
-        <CourseDescription
           description={description}
         />
+
         <CourseOverview lessons={lessons} />
         <LessonIndex lessons={lessons} />
-        <CourseLessonPlan />
+        <CourseLessonPlan lessons={lessons} />
       </>
 
     )
