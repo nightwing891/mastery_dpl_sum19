@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import CourseForm from './CourseForm';
+import { Header } from 'semantic-ui-react';
 import axios from 'axios';
 
-// Form has the axios call
-// handleSubmit calls the course create
-
-class CreateCourse extends React.Component {
+class CreateCourse extends Component {
   state = { courses: [] }
 
   componentDidMount() {
@@ -16,6 +14,14 @@ class CreateCourse extends React.Component {
       .catch( err => {
         console.log(err)
       })
+  }
+
+  rightTitle = () => {
+    if (this.props.location.state) {
+      return <Header as='h1' textAlign='center'>Edit Course</Header> 
+    } else {
+      return <Header as='h1' textAlign='center'>Create Course</Header>
+    }
   }
 
   render() {

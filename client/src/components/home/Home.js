@@ -35,6 +35,9 @@ class Home extends Component {
 
       <TopLessons />
 
+      <h1 style={{ textAlign:'center', fontSize: '3em', color: 'black' }}>
+        All Courses
+      </h1>
       <Grid columns={4}>   
         <CourseIndex courses={this.state.courses}/>
       </Grid>

@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
-import {
-  Button,
-  Container,
-  Header,
-  Icon,
-  Image,
-} from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 import hero from './HeroImage.png';
 
 const styles = {

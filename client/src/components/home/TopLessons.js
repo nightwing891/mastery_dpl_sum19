@@ -7,7 +7,7 @@ const TopLessons = ({}) => (
     <Header as='h2' inverted textAlign='center' 
     style={{ 
       fontSize: '4em',
-       color: '#8168B1' }}>
+       color: 'black' }}>
       Top Lessons
     </Header>
         <div>

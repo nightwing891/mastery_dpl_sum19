@@ -4,9 +4,9 @@ import { Grid, Header, Segment } from 'semantic-ui-react'
 
 const Reviews = () => (
   <>
-  <h2 style={{ fontSize: '3em', textAlign: 'center', color: '#8168B1' }}>What Students Are Saying</h2>
+  <h2 style={{ fontSize: '3em', textAlign: 'center', color: 'black' }}>What Students Are Saying</h2>
   
-  <Segment style={{ padding: '0em', color: '#8168B1' }} vertical>
+  <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
@@ -23,6 +23,8 @@ a wireframe, creative composition, or information architecture. A device that en
             <Header as='h3' style={{ fontSize: '2em', color: '#8168B1' }}>
               "The visual guide will provide a view to the customer of what their website or project will end up looking like. It ensures that they are kept up to date on any developments."
             </Header>
+              <br />
+              <br />
             <p style={{ fontSize: '1.33em' }}>
               <br />
               <b>Henry Itondo</b> Chief Fun Officer Acme Toys

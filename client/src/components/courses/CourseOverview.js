@@ -8,37 +8,26 @@ const CourseOverview = ({lessons}) => (
         
       <Grid.Row verticalAlign='middle'>
         <Grid.Column>
-          <Header icon>
-            <Icon name='boxes' />
-            <>
+          <Header icon as='h1'>
+            <Icon name='boxes' circular />
               {
               lessons.length + ' Lessons'
               }
-            </>
           </Header>
-            <p>
-              Add additional context/description here . . .
-            </p>
         </Grid.Column>
   
         <Grid.Column>
-          <Header icon>
-            <Icon name='book' />
+          <Header icon as='h1'>
+            <Icon name='book' circular />
               Workbook
           </Header>
-            <p>
-              Add additional context/description here . . .
-            </p>
         </Grid.Column>
           
         <Grid.Column>
-          <Header icon>
-            <Icon name='world' />
+          <Header icon as='h1'>
+            <Icon name='world' circular />
               Anytime, Anywhere
           </Header>
-            <p>
-              Add additional context/description here . . .
-            </p>
         </Grid.Column>
       </Grid.Row>
     </Grid>

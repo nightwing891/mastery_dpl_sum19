@@ -7,5 +7,5 @@ Rails.application.routes.draw do
       resources :lessons
     end
   end
-
+  get '*other', to: 'static#index'
 end
