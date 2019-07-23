@@ -31,12 +31,13 @@ const App = () => (
     <FetchUser>
 
       <div
-        style={{ width: '100%', background: 'black' }}
+        style={{ width: '100%', background: '#8168B1' }}
       >
         <Container style={{ background: '#F5F5F5' }}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+
             <ProtectedRoute exact path="/course/:id" component={CoursePage} />
             <ProtectedRoute exact path="/lesson/:id" component={LessonPage} />
             <AdminRoute exact path="/admin/lesson/:id" component={AdminLessonPage} />

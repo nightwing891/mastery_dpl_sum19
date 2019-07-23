@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CourseHeader from './CourseHeader';
-
 import CourseOverview from './CourseOverview';
 import CourseLessonPlan from './CourseLessonPlan';
 import { Header, Button, Divider, Grid, Icon, Search, Segment, Container } from "semantic-ui-react";
