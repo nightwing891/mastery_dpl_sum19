@@ -38,7 +38,7 @@ handleInputChange = () => {
   render() {
     const { course, filter } = this.state;
     return (
-      <form style={{ marginLeft: '20%'}}>
+      <form style={{ marginLeft: '30%'}}>
         <input 
           required placeholder="Search" 
           ref={input => this.search = input}
