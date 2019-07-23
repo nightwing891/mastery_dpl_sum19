@@ -28,7 +28,7 @@ const App = () => (
     <Navbar />
       <FetchUser>
 
-        <div style={{ width: '100%', background: 'black' }}>
+        <div style={{ width: '100%', background: '#8168B1' }}>
           <Container style={{ background: '#F5F5F5' }}>
             <Switch>
               <Route exact path="/" component={Home} />

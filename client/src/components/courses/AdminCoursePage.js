@@ -27,6 +27,34 @@ class AdminCoursePage extends Component {
     const { lessons } = this.state
     return (
       <>
+      <Button
+          size='small' floated="right"
+          onClick={() => deleteCourse(id)}
+          style={{ padding: '1em', margin: '1em' }}
+        >
+          Delete Course
+        </Button>
+
+        <Link to={{
+          pathname: '/admin-create-course',
+          state: { id, title, description, workbook, subtitle, }
+        }} >
+          <Button size='small' floated="right"
+            style={{ padding: '1em', margin: '1em' }}>
+            Edit Course
+          </Button>
+        </Link>
+
+        <Link to={{
+          pathname: '/admin-create-lesson',
+          state: { course_id: id }
+        }} >
+          <Button size='small' floated="right"
+            style={{ padding: '1em', margin: '1em' }}>
+            Create Lesson
+          </Button>
+        </Link>
+
         <Header as="h1">
           { title }
         </Header>
@@ -34,39 +62,9 @@ class AdminCoursePage extends Component {
           { description }
         </Header>
         <CourseOverview lessons={lessons} />
-        <AdminLessonIndex lessons={lessons} />
+        <AdminLessonIndex lessons={lessons} course_id={id} />
       
-        <Button 
-          size='small' 
-          color="red"
-          onClick={()=> deleteCourse(id)}
-        >
-          Delete Course
-        </Button>
-
-        <Link to = {{ 
-          pathname: './admin-create-course', 
-          state: { id, title, description, workbook, subtitle, }
-          }} >
-          <Button 
-            size='small' 
-            color="yellow"
-          >
-            Edit Course
-          </Button> 
-        </Link>
-
-        <Link to = {{ 
-          pathname: '/admin-create-lesson', 
-          state: { course_id: id }
-          }} >
-          <Button 
-            size='small' 
-            color="green"
-          >
-            Create Lesson
-          </Button> 
-        </Link>
+        
       </>
 
     )

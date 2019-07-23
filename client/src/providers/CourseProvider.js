@@ -33,7 +33,7 @@ export class CourseProvider extends Component {
   }
 
   deleteCourse = (id) => {
-    axios.delete(`api/courses/${id}`)
+    axios.delete(`/api/courses/${id}`)
      .then( res => {
        const { courses } = this.state
        this.setState({ courses: courses.filter( c=> c.id !==id )})
@@ -65,8 +65,8 @@ export class CourseProvider extends Component {
      })
    }
 
-   deleteLesson = (courseId, id) => {
-    axios.delete(`/api/courses/${courseId}/lessons/${id}`)
+   deleteLesson = (course_id, id) => {
+    axios.delete(`/api/courses/${course_id}/lessons/${id}`)
      .then( res => {
        const { lessons } = this.state
        this.setState({ lessons: lessons.filter( c=> c.id !==id)})

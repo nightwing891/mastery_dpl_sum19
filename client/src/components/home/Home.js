@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimmer, Loader } from 'semantic-ui-react';
+import { Dimmer, Loader, Grid } from 'semantic-ui-react';
 import HomepageHero from './HomepageHero';
 import Reviews from './Reviews';
 import axios from 'axios';
@@ -34,9 +34,11 @@ class Home extends Component {
       <HomepageHero /> 
 
       <TopLessons />
-          
-      <CourseIndex courses={this.state.courses}/>
-        
+
+      <Grid columns={4}>   
+        <CourseIndex courses={this.state.courses}/>
+      </Grid>
+
       <Reviews />   
       </>
     )
