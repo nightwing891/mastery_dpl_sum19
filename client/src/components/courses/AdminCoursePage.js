@@ -57,7 +57,7 @@ class AdminCoursePage extends Component {
         </Link>
 
         <Link to = {{ 
-          pathname: './admin-create-lesson', 
+          pathname: '/admin-create-lesson', 
           state: { course_id: id }
           }} >
           <Button 

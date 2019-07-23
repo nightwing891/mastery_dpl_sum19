@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { CourseConsumer } from '../../providers/CourseProvider';
-import { Button, Form, Segment, Header, Select } from 'semantic-ui-react';
-import CreateLesson from './CreateLesson';
-import axios from 'axios';
+import { Button, Form, Segment, Header, Icon } from 'semantic-ui-react';
 
-// put this form in the admin course show page http://localhost:3000/admin-lessons
 
 class LessonForm extends React.Component {
   state = { instructor: '', title: '', subtitle: '', description: '', length: '', body: '', course_id: '' }
@@ -97,16 +94,18 @@ class LessonForm extends React.Component {
             placeholder='Length'
             onChange={this.handleChange}
           />
-          <Form.Button
+          <Form.Input
             label="Body"
             autoFocus
             required         
             name='body'
             value={body}
             placeholder='Body'
-            onClick={this.uploadWidget}
             onChange={this.handleChange}
           />
+
+          <Icon name='upload' size='big' onClick={this.uploadWidget}/>
+
           <Segment textAlign='center' basic>
             <Button type='submit' color='purple'>Submit</Button>
           </Segment>
