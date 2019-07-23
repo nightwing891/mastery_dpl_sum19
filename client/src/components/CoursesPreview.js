@@ -10,23 +10,18 @@ const CoursesPreview = ({}) => (
        color: '#8168B1' }}>
       Top Lessons
     </Header>
-    <Grid columns='equal'>
-      <Grid.Row columns='equal'>
+        <div>
+      <Grid >
+        <Grid.Row columns={3} style={{textAlign:'center'}}>
         <Grid.Column>
-          <p>
-            <span>
             <Video
               cloudName='dtajlsppz'
               publicId='Ivy1'
               width='300'
               controls='true'
             />
-            </span>
-          </p>
         </Grid.Column>
         <Grid.Column>
-          <p>
-            <span>
             <Video
               cloudName='dtajlsppz'
               publicId='Ivy5'
@@ -36,23 +31,18 @@ const CoursesPreview = ({}) => (
               autoplay='true'
 
             />
-            </span>
-          </p>
         </Grid.Column>
         <Grid.Column>
-          <p>
-            <span>
             <Video
               cloudName='dtajlsppz'
               publicId='Ivy3'
               width='300'
               controls='true'
              />
-            </span>
-          </p>
         </Grid.Column>
-      </Grid.Row>
-    </Grid>
+        </Grid.Row>
+      </Grid>
+      </div>
   </>
 )
     export default CoursesPreview;
