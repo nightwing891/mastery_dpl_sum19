@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { UserConsumer } from '../../providers/UserProvider';
 
 class UserShow extends React.Component {
-  state= {user: {} }
+  state = { user: {} }
 
   // componentDidMount = () => {
   //   axios.get(`api/users/${this.props.match.params.id}`)
@@ -19,14 +19,15 @@ class UserShow extends React.Component {
     const { deleteUser } = this.props.value
     return (
       <>
-      <h1>{name}</h1>
-      <p>Email: {email}</p>
-        <Button 
-          size='small' 
+        <h1 style={{ padding: '1em', margin: '1em' }}>{name}</h1>
+        <p style={{ padding: '1em', margin: '1em' }}>Email: {email}</p>
+        <Button
+          size='small'
           color="red"
-          onClick={()=> deleteUser(id)}
-          >
-            Delete User
+          onClick={() => deleteUser(id)}
+          style={{ padding: '1em', margin: '1em' }}
+        >
+          Delete User
         </Button>
       </>
     )
@@ -37,7 +38,7 @@ export default class ConnectedUserShow extends React.Component {
   render() {
     return (
       <UserConsumer>
-        { value => <UserShow {...this.props} value={value} /> }
+        {value => <UserShow {...this.props} value={value} />}
       </UserConsumer>
     )
   }
